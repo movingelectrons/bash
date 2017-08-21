@@ -9,10 +9,6 @@ set number
 set whichwrap+=<,>,h,l,[,]
 colorscheme elflord
 au BufRead,BufNewFile *.ino setfiletype c
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
 nmap <F11> :TagbarToggle<CR>
 nmap <F12> :NerdTree<CR>
 
