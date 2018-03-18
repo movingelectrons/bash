@@ -9,17 +9,18 @@ read -r -p "Are the above listed packages installed? [y/N] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then
-    [ -e ~/.bash_profile ] && mv ~/.bash_profile ~/.old_bash_profile|echo "backing up existing .bash_profile to .old_bash_profile..."
-    cp ./bash_profile ~/.bash_profile
-    if ! grep -q 'source ~/.bash_profile' "${profile_file}" ; then
-        echo "Editing ${profile_file} to source ~/.bash_profile"
-        echo "source \"source ~/.bash_profile\"" >> "${profile_file}"
-    fi
-    cp ./vimrc ~/.vimrc
     cp -a ./vim/* ~/.vim
     cd ~/.vim/bundle/YouCompleteMe
     git submodule update --init --recursive
     ./install.py --clang-completer --cs-completer --js-completer
-    echo "logout and back in to complete setup (or ': source .bashrc')"
+    [ -e ~/.bash_profile ] && mv ~/.bash_profile ~/.old_bash_profile|echo "backing up existing .bash_profile to .old_bash_profile..."
+    cp ./bash_profile ~/.bash_profile
+    if ! grep -q 'source ~/.bash_profile' "${profile_file}" ; then
+        echo "Adding 'source ~/.bash_profile' to ${profile_file}"
+        echo "source ~/.bash_profile" >> "${profile_file}"
+    fi
+    [ -e ~/.vimrc ] && mv ~/.vimrc ~/.old_vimrc|echo "backing up existing .vimrc to .old_vimrc..."
+    cp ./vimrc ~/.vimrc
+    echo "logout and back in to complete setup (or '$ source .bashrc')"
 fi
 
