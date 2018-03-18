@@ -7,8 +7,9 @@ set softtabstop=4
 set expandtab
 set number
 set whichwrap+=<,>,h,l,[,]
+set encoding=utf-8
 colorscheme elflord
 au BufRead,BufNewFile *.ino setfiletype c
-nmap <F11> :TagbarToggle<CR>
-nmap <F12> :NerdTree<CR>
+nmap <F2> :TagbarToggle<CR>
+nmap <F3> :Ntree<CR>
 

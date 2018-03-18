@@ -1,21 +1,25 @@
 #!/bin/bash
-#FIXME first check if .bash_profile exists.. (seems to error out if it does not exist) 
-mv ~/.bash_profile ~/.old_bash_profile
-#TODO make this work from the root of the install script, so it dosen't matter where the script is called from
-cp ./bash_profile ~/.bash_profile
-source ~/.bash_profile
-cp ./vimrc ~/.vimrc
-cp -r ./vim ~/.vim
+#be sure to call this script from where its located, ie do "./install.sh" do not "../install.sh"
+#?TODO get omnisharp-vim working?
 
-#FIXME
-#cd ~/.vim/bundle/omnisharp-vim
-#git submodule update --init --recursive
-#cd server
-#/c/Windows/Microsoft.NET/Framework64/v4.0.30319/MSBuild.exe
+profile_file="~/.bashrc"
 
-#cd ~/.vim/bundle/youcompleteme
-#git submodule update --init --recursive
-#py.exe -3 ./install.py --clang-completer
-
-cd ~/
+echo "build-essential cmake python-dev python3-dev mono-devel npm git"
+read -r -p "Are the above listed packages installed? [y/N] " response
+response=${response,,}    # tolower
+if [[ "$response" =~ ^(yes|y)$ ]]
+then
+    [ -e ~/.bash_profile ] && mv ~/.bash_profile ~/.old_bash_profile|echo "backing up existing .bash_profile to .old_bash_profile..."
+    cp ./bash_profile ~/.bash_profile
+    if ! grep -q 'source ~/.bash_profile' "${profile_file}" ; then
+        echo "Editing ${profile_file} to source ~/.bash_profile"
+        echo "source \"source ~/.bash_profile\"" >> "${profile_file}"
+    fi
+    cp ./vimrc ~/.vimrc
+    cp -a ./vim/* ~/.vim
+    cd ~/.vim/bundle/YouCompleteMe
+    git submodule update --init --recursive
+    ./install.py --clang-completer --cs-completer --js-completer
+    echo "logout and back in to complete setup (or ': source .bashrc')"
+fi
 
