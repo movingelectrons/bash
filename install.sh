@@ -31,5 +31,11 @@ then
     cd ${initial_pwd}
     [ -e ~/.vimrc ] && mv ~/.vimrc ~/.old_vimrc|echo "backing up existing .vimrc to .old_vimrc..."
     cp ./vimrc ~/.vimrc
+    
+    # If ~./inputrc doesn't exist yet, first include the original /etc/inputrc so we don't override it
+    if [ ! -a ~/.inputrc  ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
+    # Add option to ~/.inputrc to enable case-insensitive tab completion
+    echo 'set completion-ignore-case On' >> ~/.inputrc
+
     echo "logout and back in to complete setup (or '$ source ~/.bashrc')"
 fi
