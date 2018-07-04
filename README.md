@@ -8,3 +8,9 @@ install using './install.sh'
 remember to run :Helptags in vim
 
 ref: https://forum.unity3d.com/threads/unity3d-with-vim.355814/
+
+##Notes (VIM)
+ZZ in normal mode = save and quit
+ZQ ''             = quit without saving
+$ ''              = go to end of line
+
