@@ -22,8 +22,11 @@ vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
+nmap <C-s> :w<CR>
+imap <C-s> <Esc>:w<CR>a
 nmap <F2> :TagbarToggle<CR>
 nmap <F3> :NERDTree<CR>
+nmap <F7> mzgg=G`z`
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
