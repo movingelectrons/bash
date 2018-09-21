@@ -15,7 +15,6 @@ then
     #cd ~/.vim/bundle/
     #git clone https://github.com/Valloric/YouCompleteMe.git #TODO use git submodules... < these are rather confusing ATM..
     cd ~/.vim/bundle/YouCompleteMe
-    git submodule update --init --recursive
     ./install.py --clang-completer --cs-completer --js-completer
     [ -e ~/.bash_profile ] && mv ~/.bash_profile ~/.old_bash_profile|echo "backing up existing .bash_profile to .old_bash_profile..."
     cd ${initial_pwd}
