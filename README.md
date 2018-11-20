@@ -1,9 +1,9 @@
 #Introduction
-This is my bash, git alias, vim, and etc settings, as well as a few select scripts I have found very helpful in automating some tasks.
+These scripts help me setup a new system quickly.
 
-Last used on Debian 9
+Last used on lubuntu 18
 
-install using './install.sh'
+install using './install1.sh', followed by 'install2.sh'
 
 remember to run :Helptags in vim
 
