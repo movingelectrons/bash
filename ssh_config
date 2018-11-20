@@ -1,0 +1,15 @@
+Host fs1
+  HostName 192.168.1.101
+
+Host m.oa1
+  HostName 192.168.1.105
+  User ethos
+
+Host m.oa2
+  HostName 192.168.1.115
+  User ethos
+
+Host m.oa3
+  HostName 192.168.1.102
+  User ethos
+
