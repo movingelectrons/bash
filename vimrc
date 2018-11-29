@@ -4,7 +4,7 @@ filetype plugin indent on
 colorscheme elflord
 
 if has("gui_running")
-  set lines=43 columns=100
+  set lines=39 columns=100
   winpos 800 0
 endif
 
