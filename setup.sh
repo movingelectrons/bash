@@ -30,5 +30,7 @@ if [ ! -a ~/.inputrc  ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
 # Add option to ~/.inputrc to enable case-insensitive tab completion
 echo 'set completion-ignore-case On' >> ~/.inputrc
 
+sudo cp ./autostart/guake.desktop /etc/xdg/autostart/
+
 echo "logout and back in to complete setup (or '$ source ~/.bashrc')"
 
