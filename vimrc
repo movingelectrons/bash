@@ -8,6 +8,7 @@ if has("gui_running")
   winpos 800 0
 endif
 
+set visualbell
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2

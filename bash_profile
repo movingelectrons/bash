@@ -32,4 +32,5 @@ alias zlz='zcash-cli z_listaddresses'
 
 bind -r '\C-s'
 stty -ixon
+setterm -blenth 0
 
