@@ -20,6 +20,9 @@ git() {
     fi
 }
 
+export wr=~/../../mnt/c/Users/jeromes/
+alias cdwr='cd "$wr"'
+
 alias msbuild='/c/Windows/Microsoft.NET/Framework64/v4.0.30319/MSBuild.exe'
 alias cmake="/c/Program\ Files/CMake/bin/cmake.exe"
 alias CMake='cmake'

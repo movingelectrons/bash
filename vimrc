@@ -27,6 +27,7 @@ imap <C-s> <Esc>:w<CR>a
 nmap <F2> :TagbarToggle<CR>
 nmap <F3> :NERDTree<CR>
 nmap <F7> mzgg=G`z`
+nmap <F10> :below term
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -40,3 +41,10 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" Window Navigation with Ctrl-[hjkl]
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+
+set termwinsize=15x0

@@ -10,6 +10,8 @@ ref: https://forum.unity3d.com/threads/unity3d-with-vim.355814/
 ZZ in normal mode = save and quit
 ZQ      ''        = quit without saving
 $       ''        = go to end of line
+:%s/foo/bar/g = find and replace in all lines
+
 
 #Instructions
 ##first make sure you have run 'sudo' latley so it dosent ask for password!
