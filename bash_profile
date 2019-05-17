@@ -34,3 +34,4 @@ bind -r '\C-s'
 stty -ixon
 setterm -blength 0
 
+export DISPLAY=:0
