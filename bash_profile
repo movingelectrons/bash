@@ -8,7 +8,7 @@ git() {
   	elif [[ $@ == "a" ]]; then
         command git add -A
     elif [[ $@ == "c" ]]; then
-        command git commit -m "Please excuse my lazyness in ommitting a proper comment for this commit, one can use gitk or a diff to see what changed however."
+        command git commit -m "-"
     else
         command git "$@"
     fi
