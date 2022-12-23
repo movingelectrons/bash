@@ -1,35 +1,25 @@
 # My ~/.bash_profile
 
-# for showing currently selected git branch
-PATH=/usr/local/git/bin:$PATH
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-# ... really wish i knew what all this does better; 
-#   colorizes bash prompt, shows time, current folder, yada yada..
-export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-
 # shorthand functions;
 #   'git status' = 'git s', 'git add' = 'git a', 'git commit -m "..."' = 'git c' 
-function gitcom() {
-    git commit -m "Please excuse my lazyness in ommitting a proper comment for this commit, one can use gitk or a diff to see what changed however."
-}
 git() {
     if [[ $@ == "s" ]]; then
         command git status
   	elif [[ $@ == "a" ]]; then
         command git add -A
     elif [[ $@ == "c" ]]; then
-        gitcom
+        command git commit -m "Please excuse my lazyness in ommitting a proper comment for this commit, one can use gitk or a diff to see what changed however."
     else
         command git "$@"
     fi
 }
 
-# allows tab completion to be case insensitive?  or something...
-bind -r '\C-s'
-# be able to use ctrl-[q,s,etc] key combos like 'usual'
+# be able to use ctrl-[q,s,etc] key combos like 'usual' ?... i think..?
 stty -ixon
+bind -r '\C-s' 
+
+# https://bashrcgenerator.com/
+export PS1="\[$(tput bold)\]\[\033[38;5;2m\]\t\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;32m\]\u\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;244m\]@\[$(tput sgr0)\]\[\033[38;5;26m\]\h\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;244m\]:\[$(tput sgr0)\]\[\033[38;5;34m\]\w\[$(tput sgr0)\]\[\033[38;5;11m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;244m\]\\$\[$(tput sgr0)\]"
 
 #these are for WSL only
 #export wr=~/../../mnt/c/Users/jeromes/
