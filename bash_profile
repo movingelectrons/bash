@@ -1,3 +1,4 @@
+# reminder: use comments next time so I remember what this stuff actually does...
 PATH=/usr/local/git/bin:$PATH
 
 parse_git_branch() {
@@ -20,18 +21,18 @@ git() {
     fi
 }
 
-export wr=~/../../mnt/c/Users/jeromes/
-alias cdwr='cd "$wr"'
+#export wr=~/../../mnt/c/Users/jeromes/
+#alias cdwr='cd "$wr"'
 
-alias msbuild='/c/Windows/Microsoft.NET/Framework64/v4.0.30319/MSBuild.exe'
-alias cmake="/c/Program\ Files/CMake/bin/cmake.exe"
-alias CMake='cmake'
+#alias msbuild='/c/Windows/Microsoft.NET/Framework64/v4.0.30319/MSBuild.exe'
+#alias cmake="/c/Program\ Files/CMake/bin/cmake.exe"
+#alias CMake='cmake'
 
-alias zlt="zcash-cli getaddressesbyaccount ''"
-alias zlz='zcash-cli z_listaddresses'
+#alias zlt="zcash-cli getaddressesbyaccount ''"
+#alias zlz='zcash-cli z_listaddresses'
 
 bind -r '\C-s'
 stty -ixon
 setterm -blength 0
 
-export DISPLAY=:0
+#export DISPLAY=:0
