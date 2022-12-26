@@ -19,7 +19,7 @@ stty -ixon
 bind -r '\C-s' 
 
 # https://bashrcgenerator.com/
-export PS1="\[$(tput bold)\]\[\033[38;5;2m\]\t\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;32m\]\u\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;244m\]@\[$(tput sgr0)\]\[\033[38;5;26m\]\h\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;244m\]:\[$(tput sgr0)\]\[\033[38;5;34m\]\w\[$(tput sgr0)\]\[\033[38;5;11m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;244m\]\\$\[$(tput sgr0)\]"
+export PS1="\[$(tput bold)\]\[\033[38;5;2m\]\t\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;32m\]\u\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;244m\]@\[$(tput sgr0)\]\[\033[38;5;26m\]\h\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;244m\]:\[$(tput sgr0)\]\[\033[38;5;34m\]\w\[$(tput sgr0)\]\[\033[38;5;11m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;244m\]\[\033[34;5;9m\]\$\[$(tput sgr0)\] "
 
 #these are for WSL only
 #export wr=~/../../mnt/c/Users/jeromes/

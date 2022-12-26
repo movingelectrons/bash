@@ -5,9 +5,9 @@ These scripts help me setup a new debian based (and others?) system, along with 
 ## Instructions
 
 1. setup ssh keys
-  if copying keys over from old system, run 'add-ssh' after making sure permissions are right
-  if generating new keys, see bottom of this file
-2. make sure you have run 'sudo' latley so it dosent ask for password!
+    * if copying keys over from old system, run 'add-ssh' after making sure permissions are right
+    * if generating new keys, see bottom of this file
+2. make sure you have run 'sudo' lately so it doesn't ask for password
 3. then copy the following and paste into terminal
 
 ```bash
@@ -24,5 +24,8 @@ cd ./bash
 ```
 
 ### To generate new ssh keys
+
+```bash
 yes "" | ssh-keygen -t rsa -b 4096 -C "jeromestonebridge@gmail.com"
 cat ~/.ssh/id_rsa.pub
+```
