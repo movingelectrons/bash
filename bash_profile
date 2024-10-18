@@ -1,5 +1,8 @@
 # My ~/.bash_profile
 
+#make tab complete case insensitive
+bind 'set completion-ignore-case on'
+
 # shorthand functions;
 #   'git status' = 'git s', 'git add' = 'git a', 'git commit -m "..."' = 'git c' 
 git() {
